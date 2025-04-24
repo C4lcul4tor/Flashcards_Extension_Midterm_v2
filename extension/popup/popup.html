@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flashcard Creator</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <h1>Flashcard Creator</h1>
+
+  <textarea id="front" placeholder="Front (highlighted text)"></textarea>
+  <textarea id="back" placeholder="Back (your answer)"></textarea>
+  <button id="save">Save Flashcard</button>
+
+  <hr />
+
+  <h2>Review Flashcards</h2>
+  <div id="card-display">
+    <p><strong>Front:</strong> <span id="display-front"></span></p>
+    <p><strong>Back:</strong> <span id="display-back"></span></p>
+  </div>
+  <button id="prev">Prev</button>
+  <button id="next">Next</button>
+  <button id="delete">Delete</button>
+  <button id="export">Export to JSON</button>
+
+  <div id="output"></div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
