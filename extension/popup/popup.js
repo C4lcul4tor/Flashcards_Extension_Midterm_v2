@@ -91,13 +91,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function showCard() {
-    if (flashcards.length === 0) {
-      displayFront.textContent = "(no cards yet)";
-      displayBack.textContent = "";
-    } else {
-      const card = flashcards[currentIndex];
-      displayFront.textContent = card.front;
-      displayBack.textContent = card.back;
-    }
+  const total = flashcards.length;
+  if (total === 0) {
+    displayFront.textContent = "(no cards yet)";
+    displayBack.textContent = "";
+  } else {
+    const card = flashcards[currentIndex];
+    displayFront.textContent = card.front;
+    displayBack.textContent = card.back;
   }
+
+  const cardDisplay = document.getElementById("card-display");
+  if (total > 0) {
+    cardDisplay.insertAdjacentHTML("beforeend", `<p><em>Card ${currentIndex + 1} of ${total}</em></p>`);
+  }
+}
+
 });
